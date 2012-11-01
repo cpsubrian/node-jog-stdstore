@@ -1,0 +1,25 @@
+{
+  "name": "jog-stdstore",
+  "version": "0.0.0",
+  "description": "Provides StdStore for jog",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cpsubrian/jog-stdstore.git"
+  },
+  "homepage": "https://github.com/cpsubrian/jog-stdstore",
+  "keywords": [
+    "jog",
+    "log",
+    "json"
+  ],
+  "author": "Brian Link <cpsubrian@gmail.com>",
+  "license": "MIT"
+}
