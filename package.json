@@ -1,6 +1,6 @@
 {
   "name": "jog-stdstore",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Provides StdStore for jog",
   "main": "index.js",
   "dependencies": {
