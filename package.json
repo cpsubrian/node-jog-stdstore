@@ -3,9 +3,14 @@
   "version": "0.0.0",
   "description": "Provides StdStore for jog",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "debug": "*"
+  },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "should": "*",
+    "jog": "~0.5.1",
+    "through": "*"
   },
   "scripts": {
     "test": "make test"
