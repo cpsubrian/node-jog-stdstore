@@ -1,9 +1,85 @@
 jog-stdstore
 ============
 
-Provides StdStore for jog
+Provides StdStore for [jog](https://github.com/visionmedia/jog).
 
 [![build status](https://secure.travis-ci.org/cpsubrian/node-jog-stdstore.png)](http://travis-ci.org/cpsubrian/node-jog-stdstore)
+
+Usage
+-----
+
+```js
+var StdStore = require('jog-stdstore')
+  , jog = require('jog')
+  , log = jog(new StdStore());
+
+log.info('something cool', {name: 'Cool thing'});
+
+// Logging output sent to stdout and stderr
+```
+
+Options
+-------
+
+An options hash can be passed to the StdStore constructor with the following
+keys:
+
+- `inStream` - A readable stream (defaults to `process.stdin`).
+- `errStream` - A writable stream for 'error' and 'warn' level logs. (defaults
+                to `process.stderr`).
+- `outStream` - A writable stream for 'info' and 'debug' level logs. (defaults
+                to `process.stdout`).
+- `redirect` - Send all output to the *outStream*, instead of *out* and *err*.
+
+Using with the joli(1)
+----------------------
+
+After configuring your app to log via the StdStore, all your logging output
+will be in the console, but it will be full JSON objects.
+
+To make some sense of your logs I recommend checking out [joli](https://github.com/cpsubrian/node-joli).
+
+**Example**
+
+Normal output ...
+
+```
+$ node myapp.js
+{type: "user authenticated", uid: 24, timestamp: 1234789091823}
+{type: "user authenticated", uid: 14, timestamp: 1234789091823}
+{type: "request", path: "/", timestamp: 1234789091823}
+{type: "request", path: "/about", timestamp: 1234789091823}
+{type: "query", query: "SELECT * FROM fun", timestamp: 1234789091823}
+{type: "request", path: "/", timestamp: 1234789091823}
+{type: "query", query: "DELETE * FROM users", timestamp: 1234789091823}
+{type: "user authenticated", uid: 500, timestamp: 1234789091823}
+```
+
+Using joli ...
+
+```
+$ node myapp.js 2>&1 | joli -l --map type
+user authenticated
+user authenticated
+request
+request
+query
+request
+query
+user authenticated
+```
+
+Or ...
+
+```
+$ node myapp.js 2>&1 | joli -l --map "'Request: ' + _.path" --filter "_.type === 'request'"
+Request: /
+Request: /about
+Request: /
+```
+
+**Joli** Exposes a similar CLI to jog(1) but with support for reading from
+stdin as well as using saved 'styles' and 'outputters'.
 
 - - -
 
