@@ -17,9 +17,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cpsubrian/jog-stdstore.git"
+    "url": "git://github.com/cpsubrian/node-jog-stdstore.git"
   },
-  "homepage": "https://github.com/cpsubrian/jog-stdstore",
+  "homepage": "https://github.com/cpsubrian/node-jog-stdstore",
   "keywords": [
     "jog",
     "log",

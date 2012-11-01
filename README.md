@@ -3,9 +3,7 @@ jog-stdstore
 
 Provides StdStore for jog
 
-[![build status](https://secure.travis-ci.org/cpsubrian/jog-stdstore.png)](http://travis-ci.org/cpsubrian/jog-stdstore)
-
-&#x60;... project README above this point ...&#x60;
+[![build status](https://secure.travis-ci.org/cpsubrian/node-jog-stdstore.png)](http://travis-ci.org/cpsubrian/node-jog-stdstore)
 
 - - -
 
